@@ -16,6 +16,7 @@ namespace UI {
 		void showAlmostEmpty();
 		void showExpirationDate();
 		void addFruit();
+		void initialize();
 		void deleteFruit();
 	};
 }

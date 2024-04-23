@@ -6,40 +6,10 @@
 using namespace Repository;
 using namespace Domain;
 
-FruitRepo::FruitRepo() {
-	ifstream file("Deposit");
-	if (!file.is_open()) {
-		return;
-	}
-	string line;
-	while (getline(file, line)) {
-		stringstream ss(line);
-		string name, origin, expirationDate, pricestr, quantitystr;
-		getline(ss, name, ',');
-		getline(ss, origin, ',');
-		getline(ss, expirationDate, ',');
-		getline(ss, pricestr, ',');
-		getline(ss, quantitystr, ',');
-		int price = 0, quantity = 0;
-		stringstream(pricestr) >> price;
-		stringstream(quantitystr) >> quantity;
-		Fruit fruit(name, origin, expirationDate, price, quantity);
-		fruitRepo.push_back(fruit);
-	}
-	file.close();
-}
+FruitRepo::FruitRepo() {}
 
 void FruitRepo::updateDeposit() {
 	sort(fruitRepo.begin(), fruitRepo.end());
-	ofstream file;
-	file.open("Deposit");
-	for (int i = 0; i < fruitRepo.size(); i++) {
-		file << fruitRepo[i].getName() << ',';
-		file << fruitRepo[i].getOrigin() << ',';
-		file << fruitRepo[i].getExpirationDate() << ',';
-		file << fruitRepo[i].getPrice() << ',';
-		file << fruitRepo[i].getQuantity() << endl;
-	}
 }
 
 void FruitRepo::addFruit(Fruit fruit) {

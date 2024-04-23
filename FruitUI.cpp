@@ -46,7 +46,8 @@ void FruitUI::menu() {
 				deleteFruit();
 				break;
 			case 7:
-				cout << "Have a great day!";
+				cout<<endl;
+				cout << "Have a great day!"<< endl;
 				running = false;
 				break;
 			default:
@@ -132,6 +133,7 @@ void FruitUI::deleteFruit() {
 	cout << "Origin: ";
 	cin >> origin;
 	cout <<endl;
+	cout <<endl;
 	cout << "Removing item.." << endl;
 	try {
 		controller->deleteFruit(name, origin);
@@ -142,3 +144,12 @@ void FruitUI::deleteFruit() {
 		deleteFruit();
 	}
 }
+
+void FruitUI::initialize() {
+	controller->addFruit("Mango", "Brazil", "22/10/2024", 1, 5);
+	controller->addFruit("Banana", "Reunion", "01/01/2024", 2, 4);
+	controller->addFruit("Apple", "Montenegro", "12/12/2024", 3, 3);
+	controller->addFruit("Grape", "Laos", "31/01/2024", 4, 2);
+	controller->addFruit("Plum", "USA", "30/02/2024", 5, 1);
+}
+
