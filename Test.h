@@ -15,10 +15,6 @@ namespace Test {
 		Tests(shared_ptr<FruitController> contr);
 		void testAdd();
 		void testRemove();
-		void testFiltered();
-		void testTrackStock();
-		void testExpirationDate();
-		void testAll();
 	};
 }
 
