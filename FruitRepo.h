@@ -2,18 +2,20 @@
 #define LABORATOROOP_FRUITREPO_H
 #include "Fruit.h"
 #include <memory>
-using namespace Domain;
+#include <vector>
+using namespace std;
 
-namespace Repository {
-	class FruitRepo {
-	private:
-		vector<Fruit> fruitRepo;
-	public:
-		FruitRepo();
-		void addFruit(Fruit fruit);
-		void deleteFruit(Fruit fruit);
-		void updateDeposit();
-		vector<Fruit> getAll();
-	};
-}
+class MedicineRepository {
+public:
+	static MedicineRepository& getInstance();
+	void addMedicine(const Medicine& medicine);
+	vector<Medicine> getAllMedicines() const;
+
+private:
+	MedicineRepository() {}
+	MedicineRepository(const MedicineRepository&) = delete;
+	vector<Medicine> medicines;
+	//MedicineRepository& operator=(const MedicineRepository&) = delete;
+};
+
 #endif //LABORATOROOP_FRUITREPO_H

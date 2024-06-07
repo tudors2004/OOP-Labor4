@@ -1,34 +1,31 @@
 #include "Test.h"
-#include <cassert>
-using namespace Test;
 
-Tests::Tests(shared_ptr<FruitController> contr) {
-	controller = contr;
+void testMedicineCreation() {
+	Medicine medicine("Paracetamol", 100, 10.0, "Painkiller");
+	assert(medicine.getName() == "Paracetamol");
+	assert(medicine.getQuantity() == 100);
+	assert(medicine.getPrice() == 10.0);
+	assert(medicine.getCategory() == "Painkiller");
 }
 
-void Tests::testAdd() {
-	cout << endl;
-	string name = "Ceva", origin = "Ceva", expirationDate = "zz/zz/zzzz";
-	int price = 10, quantity = 40;
-	controller->addFruit(name, origin, expirationDate, price, quantity);
-	vector<Fruit> vector1 = controller->showAll();
-	bool found = false;
-	for(int i = 0;i<vector1.size();i++)
-		if(vector1[i].getName()==name&&vector1[i].getOrigin()==origin)
-			found = true;
-	assert(found == true);
-	cout << "Test add passed!";
+void testMedicinePriceUpdate() {
+	Medicine medicine("Paracetamol", 100, 10.0, "Painkiller");
+	medicine.setPrice(10.0);
+	assert(medicine.getPrice() == 10.0);
 }
 
-void Tests::testRemove() {
-	cout << endl;
-	string name = "Ceva", origin = "Ceva";
-	controller->deleteFruit(name, origin);
-	vector<Fruit> vector1 = controller->showAll();
-	bool found = false;
-	for(int i = 0;i<vector1.size();i++)
-		if(vector1[i].getName()==name&&vector1[i].getOrigin()==origin)
-			found = true;
-	assert(found == false);
-	cout << "Test remove passed!"<<endl;
+void testAddMedicine() {
+	MedicineRepository& repo = MedicineRepository::getInstance();
+	repo.addMedicine(Medicine("Paracetamol", 100, 10.0, "Painkiller"));
+
+	auto medicines = repo.getAllMedicines();
+	//assert(medicines.size() == 1);
+	assert(medicines[0].getName() == "Paracetamol");
+}
+
+void testAll(){
+	testMedicineCreation();
+	testMedicinePriceUpdate();
+	testAddMedicine();
+	cout<<"All tests passed"<<endl;
 }

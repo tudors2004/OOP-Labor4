@@ -3,9 +3,10 @@ project(LaboratorOOP)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(LaboratorOOP Shop.cpp
+add_executable(LaboratorOOP main.cpp
         FruitUI.cpp
         Fruit.cpp
         FruitController.cpp
         FruitRepo.cpp
-        Test.cpp)
+        Test.cpp
+)

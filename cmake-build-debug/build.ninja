@@ -49,8 +49,8 @@ cmake_ninja_workdir = G$:/Proiecte$ C++/LaboratorOOP/cmake-build-debug/
 
 build cmake_object_order_depends_target_LaboratorOOP: phony || CMakeFiles/LaboratorOOP.dir
 
-build CMakeFiles/LaboratorOOP.dir/Shop.cpp.obj: CXX_COMPILER__LaboratorOOP_unscanned_Debug G$:/Proiecte$ C++/LaboratorOOP/Shop.cpp || cmake_object_order_depends_target_LaboratorOOP
-  DEP_FILE = CMakeFiles\LaboratorOOP.dir\Shop.cpp.obj.d
+build CMakeFiles/LaboratorOOP.dir/main.cpp.obj: CXX_COMPILER__LaboratorOOP_unscanned_Debug G$:/Proiecte$ C++/LaboratorOOP/main.cpp || cmake_object_order_depends_target_LaboratorOOP
+  DEP_FILE = CMakeFiles\LaboratorOOP.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\LaboratorOOP.dir
   OBJECT_FILE_DIR = CMakeFiles\LaboratorOOP.dir
@@ -93,7 +93,7 @@ build CMakeFiles/LaboratorOOP.dir/Test.cpp.obj: CXX_COMPILER__LaboratorOOP_unsca
 #############################################
 # Link the executable LaboratorOOP.exe
 
-build LaboratorOOP.exe: CXX_EXECUTABLE_LINKER__LaboratorOOP_Debug CMakeFiles/LaboratorOOP.dir/Shop.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitUI.cpp.obj CMakeFiles/LaboratorOOP.dir/Fruit.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitController.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitRepo.cpp.obj CMakeFiles/LaboratorOOP.dir/Test.cpp.obj
+build LaboratorOOP.exe: CXX_EXECUTABLE_LINKER__LaboratorOOP_Debug CMakeFiles/LaboratorOOP.dir/main.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitUI.cpp.obj CMakeFiles/LaboratorOOP.dir/Fruit.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitController.cpp.obj CMakeFiles/LaboratorOOP.dir/FruitRepo.cpp.obj CMakeFiles/LaboratorOOP.dir/Test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LaboratorOOP.dir

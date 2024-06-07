@@ -1,36 +1,29 @@
 #include "Fruit.h"
-using namespace Domain;
 
-Fruit::Fruit(string name, string origin, string expirationDate, int price, int quantity) {
+Medicine::Medicine(const string& name, double quantity, double price, const string& category){
 	this->name = name;
-	this->origin = origin;
-	this->expirationDate = expirationDate;
-	this->price = price;
 	this->quantity = quantity;
+	this->price = price;
+	this->category = category;
 
 }
 
-Fruit::Fruit(string name, string origin) {
-	this->name = name;
-	this->origin = origin;
+string Medicine::getName() const{
+	return name;
 }
 
-string Fruit::getName() const { return name; }
+double Medicine::getPrice() const{
+	return price;
+}
 
-string Fruit::getExpirationDate() const { return expirationDate; }
+double Medicine::getQuantity() const {
+	return quantity;
+}
 
-string Fruit::getOrigin() const { return origin; }
+string Medicine::getCategory() const{
+	return category;
+}
 
-int Fruit::getPrice() const { return price; }
-
-int Fruit::getQuantity() { return quantity; }
-
-void Fruit::setName(string name) { this->name = name; }
-
-void Fruit::setExpirationDate(string expirationDate) { this->expirationDate = expirationDate; }
-
-void Fruit::setOrigin(string origin) { this->origin = origin; }
-
-void Fruit::setPrice(int price) { this->price = price; }
-
-void Fruit::setQuantity(int quantity) { this->quantity = quantity; }
+void Medicine::setPrice(double price){
+	this->price = price;
+}
